@@ -1,0 +1,29 @@
+AppBundle\Entity\Table_List:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Table_ListRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tableNumber:
+            type: integer
+            unique: true
+            column: Table_Number
+        tableName:
+            type: string
+            length: 255
+            nullable: true
+            column: Table_Name
+        guestID:
+            type: integer
+            nullable: true
+            column: Guest_ID
+        orgID:
+            type: integer
+            nullable: true
+            column: Org_ID
+    lifecycleCallbacks: {  }

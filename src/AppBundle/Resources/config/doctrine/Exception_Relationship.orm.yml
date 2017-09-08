@@ -1,0 +1,29 @@
+AppBundle\Entity\Exception_Relationship:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Exception_RelationshipRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        relationshipType:
+            type: string
+            length: 255
+            nullable: true
+            column: Relationship_Type
+        guestID1:
+            type: integer
+            nullable: true
+            column: Guest_ID_1
+        guestID2:
+            type: integer
+            nullable: true
+            column: Guest_ID_2
+        orgID:
+            type: integer
+            nullable: true
+            column: Org_ID
+    lifecycleCallbacks: {  }

@@ -1,0 +1,25 @@
+AppBundle\Entity\Guest_Group:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Guest_GroupRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        groupName:
+            type: string
+            length: 255
+            nullable: true
+            column: Group_Name
+        groupSequence:
+            type: integer
+            nullable: true
+            column: Group_Sequence
+        orgID:
+            type: integer
+            nullable: true
+            column: Org_ID
+    lifecycleCallbacks: {  }
