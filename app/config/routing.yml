@@ -1,3 +1,16 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+
+wedding_guest_edit:
+    path: /GuestEdit
+    defaults: { _controller: AppBundle:Guest:edit }
+
+wedding_guest_create:
+    path: /GuestCreate
+    defaults: { _controller: AppBundle:Guest:create }
+
+route_test_1:
+    path: /Test1
+    defaults: { _controller: AppBundle:Test:testone }
