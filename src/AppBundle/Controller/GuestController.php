@@ -36,7 +36,7 @@ class GuestController extends Controller
 
             $em->persist($guest);
             $em->flush();
-            return new Response('<html><body>Save</body></html>');
+            return new Response('<html><body>Save Edit</body></html>');
 
 	}
 	else{
@@ -48,13 +48,23 @@ class GuestController extends Controller
     
     public function createAction(Request $request)
     {
-    	$em = $this->getDoctrine()->getManager();
+//    	$em = $this->getDoctrine()->getManager();
 
-        $guest = new Guest();
-        $guest->setGuestName('Tom');
+//        $guest = new Guest();
+//        $guest->setGuestName('Tom');
 
-        $em->persist($guest);
-        $em->flush();
+//        $em->persist($guest);
+//        $em->flush();
+//	return new Response('<html><body>Save</body></html>');
+
+	$repository = $this->getDoctrine()
+		->getRepository(Guest::class);
+
+	if (!$guest){
+		throw $this->createNotFoundException(
+			'No Product found for id '
+		);
+	}
 	return new Response('<html><body>Save</body></html>');
     }
 }

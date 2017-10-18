@@ -108,15 +108,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
-        }
-
         // wedding_guest_edit
         if ('/GuestEdit' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\GuestController::editAction',  '_route' => 'wedding_guest_edit',);
